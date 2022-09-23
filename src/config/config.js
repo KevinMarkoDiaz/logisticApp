@@ -1,0 +1,13 @@
+export const SHIPPING_PRICE = 900;
+export const DISCOUNT_MESSAGE = 'El descuento se aplica al precio total de los productos y varia según la cantidad de productos, si la cantidad está entre 3 y 5 unidades el descuento es del 5% y si la cantidad supera los 5 productos se aplica un descuento de 10%'
+export const SHIPPING_MESSAGE = 'El costo del envió varia según la cantidad de productos que compres, si la cantidad es menor a dos productos el costo del envió representa el 100%: 900$, para el envió de menos de 6 productos el costo tiene una bonificación del 50% y del 100% si la cantidad es mayor a 6.'
+export const PASSWORD_REGISTER_CONTAIN = 'La contraseña debe tener una longitud mínima de 6 caracteres, y contener al menos un número, una letra y un símbolo (por ejemplo: @#$%).'
+export const INPUT_REQUIRED = 'Campo obligatorio';
+export const INVALID_EMAIL = 'Email inválido';
+export const PASSWORD_INCORRECT = 'La contraseña que ingresaste es incorrecta';
+export const TITLE_LONG = 'Nombre muy largo';
+export const TITLE_SHORT = 'Mínimo 4 caracteres';
+export const PASSWORD_SHORT = 'Mínimo 8 caracteres';
+export const PASSWORD_DONT_MATCH = 'Las contraseñas no coinciden';
+export const SHOULD_BE_DIGITS_ONLY = 'Deben ser solo digitos';
+export const NUMBER_TO_SHORT_ERROR = 'El numero debe tener minimo 8 caracteres';
