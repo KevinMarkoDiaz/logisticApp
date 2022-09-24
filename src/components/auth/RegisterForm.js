@@ -61,7 +61,9 @@ const RegisterForm = () => {
           </div>
         </div>
         <form className="form-container" onSubmit={formik.handleSubmit}>
-          <h4>Registrate</h4>
+          <div className='form-container_title'>
+            <h4>Registrate</h4>
+          </div>
 
           <label htmlFor="name" className='form-container-label'>Nombre</label>
           <Form.Control

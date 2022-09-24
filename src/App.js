@@ -1,12 +1,11 @@
-import RegisterForm from "./components/auth/RegisterForm";
+// import RegisterForm from "./components/auth/RegisterForm";
 import './App.css'
+import Header from './components/Header/Header';
+import { PageP } from './components/Page/PageP';
 
 function App() {
   return (
-    <div className="App">
-       <RegisterForm/>
-      ccss
-    </div>
+    <PageP/>
   );
 }
 

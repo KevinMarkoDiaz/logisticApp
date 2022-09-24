@@ -1,0 +1,83 @@
+.container-home{
+    width: 100%;
+    height: 100vh;
+}
+
+.home{
+    height: 65%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.container-home_title{
+    padding: 3rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 9rem;
+}
+
+.container-home_buttons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 23rem;
+    align-items: center;
+    justify-content:space-evenly;
+    padding: 8rem 0rem;
+    
+}
+
+.title-home{
+    font-size: 3rem;
+    font-family: "Roboto", sans-serif;
+}
+
+.--btn{
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-radius: 0.5rem solid gray;
+    cursor: pointer;
+    
+}
+
+.button-history{
+    height: 7rem;
+    width: 25rem;
+}
+.button-newTrip{
+    height: 7rem;
+    width: 25rem;
+}
+
+.container-home_finishedTrip{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.finishedTrip-title{
+    display: flex;
+    flex-direction: column;
+    height: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+
+.finishedTrip-list{
+    padding: 1rem 0rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-family: "Roboto", sans-serif;
+    text-transform: initial;
+    font-weight: normal;
+}
