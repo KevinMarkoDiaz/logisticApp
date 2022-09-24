@@ -4,6 +4,10 @@ import { Delete, Get, Post, Put } from "./pivateRoutes";
 const addUser = async (values) => {
   return await Post('/api/auth/new', values);
 };
+const loginUser = async (values) => {
+  return await Post('/api/auth/login', values);
+};
+
 
 const updateUser = async (values, id) => {
   return await Put(`/users/${id}`, values);
@@ -22,4 +26,4 @@ const deleteUser = async (id) => {
   return await Delete('/users',id);
 };
 
-export { addUser, deleteUser, getUser, getUsers, updateUser };
+export { addUser, deleteUser, getUser, getUsers, updateUser, loginUser};

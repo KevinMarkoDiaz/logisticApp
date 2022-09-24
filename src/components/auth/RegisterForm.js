@@ -17,13 +17,15 @@ import {
 
 import './Auth.css';
 import { addUser } from '../../services/usersServices';
+import { setTokenLS } from '../../helpers/localStorage';
 
 const RegisterForm = () => {
 
+  
 
   const handleLogin= async (user) => {
-    const ss = await addUser(user)
-    console.log(ss)
+    const tokenAuth = await addUser(user)
+    setTokenLS(tokenAuth)
   };
 
   const formik = useFormik({
