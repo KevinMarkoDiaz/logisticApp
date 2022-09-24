@@ -16,12 +16,16 @@ import {
 } from '../../config/config';
 
 import './Auth.css';
+import { addUser } from '../../services/usersServices';
+import { setTokenLS } from '../../helpers/localStorage';
 
 const RegisterForm = () => {
 
+  
 
-  const handleLoginWithGoogle = async () => {
-    console.log("first")
+  const handleLogin= async (user) => {
+    const tokenAuth = await addUser(user)
+    setTokenLS(tokenAuth)
   };
 
   const formik = useFormik({
@@ -30,19 +34,20 @@ const RegisterForm = () => {
       email: '',
       password: '',
       confirmPassword: '',
-      address: '',
+      role: '',
     },
 
     validationSchema: Yup.object({
       name: yupTitles(),
       email: yupEmail(),
       password: yupPassRegister(PASSWORD_SHORT, PASSWORD_REGISTER_CONTAIN),
-      confirmPassword: yupConfirmPass('password', PASSWORD_DONT_MATCH)
+      confirmPassword: yupConfirmPass('password', PASSWORD_DONT_MATCH),
+      role: yupTitles()
     }),
 
     onSubmit: (values) => {
-      console.log("first")
-      formik.resetForm();
+      handleLogin(values)
+      //formik.resetForm();
     },
   });
 
@@ -113,15 +118,24 @@ const RegisterForm = () => {
             <div className="error-message message">{formik.errors?.confirmPassword}</div>
           )}
 
+           <label htmlFor="role">Rol</label>
+          <Form.Control
+            autoComplete="off"
+            id="role"
+            type="text"
+            className="input-field"
+            {...formik.getFieldProps('role')}
+          />
+          {formik.touched?.role && formik.errors?.role && (
+            <div className="error-message message">{formik.errors?.role}</div>
+          )}
+
           <div className='btn-container'>
             <div>
               <button type="submit" className="btn btn-primary">
                 Registrar
               </button>
-            </div>
-            <div onClick={handleLoginWithGoogle} className="google-btn btn-container">
-              <p>Iniiar sesion con Google</p>
-            </div>
+            </div>            
           </div>
         </form>
       </div>

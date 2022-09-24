@@ -5,18 +5,20 @@ import { Form } from 'react-bootstrap';
 import { useFormik } from 'formik';
 import { yupEmail, yupPasswordLogin } from '../../helpers/formValidations';
 import './Auth.css';
+import { loginUser } from '../../services/usersServices';
+import { setTokenLS } from '../../helpers/localStorage';
 
 const LoginForm = () => {
 
 
 
   const registerSubmit = async (values) => {
-   console.log("first")
+    const {data} = await loginUser(values)
+    setTokenLS(data.token)
+   
+
   };
 
-  const handleLoginWithGoogle = async () => {
-    console.log("first")
-  };
 
   const formik = useFormik({
     initialValues: {
@@ -31,7 +33,7 @@ const LoginForm = () => {
 
     onSubmit: (values) => {
       registerSubmit(values);
-      formik.resetForm();
+     // formik.resetForm();
     },
   });
 
@@ -42,12 +44,12 @@ const LoginForm = () => {
         <div className='form-container-side '>
           <div className='form-container-nav'>
             <h4>Si aun no te registras puedes ir a hacerlo</h4>
-            <Link
+            {/* <Link
               to='/auth/register'
               className='form-container-nav-link'
             >
               Registrate
-            </Link>
+            </Link> */}
           </div>
         </div>
         <form
@@ -88,7 +90,7 @@ const LoginForm = () => {
               </button>
             </div>
             <div
-              onClick={handleLoginWithGoogle}
+             
               className="google-btn btn-container"
             >
          
